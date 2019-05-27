@@ -7,11 +7,9 @@ The primary purpose of this project is to master the fundamental aspects of buil
 
 <div  align="center">
 Login
-<img src="./login.png" width = "900" height = "350" alt="图片名称" align=center /></b>
-
-HomePage
-<img src="./home.png" width = "1000" height = "600" alt="图片名称" align=center />
+<img src="./01.JPG" width = "900" height = "550" alt="图片名称" align=center /></b>
 </div>
+
 
 
 ## Steps to Install
@@ -26,7 +24,7 @@ Clone the repo
 git clone https://github.com/moonfallmaple/mobile-falshcards.git
 ```
 
-Change into the *would-you-rather* project directory
+Change into the *mobile-flashcards* project directory
 
 ```
 cd mobile-falshcards
