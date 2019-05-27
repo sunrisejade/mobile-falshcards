@@ -15,20 +15,20 @@ class CardQuiz extends Component {
     showScore:false,
     questionRemaining:this.props.deck.questions.length,
   }
-  showAnswer(){
+
+  componentDidMount() {
+    clearLocalNotification()
+      .then(setLocalNotification)
+  }
+  
+  handelToggleAnswer(){
     this.setState(
       {
-        checkAnswer:true,
+        checkAnswer:!this.state.checkAnswer,
       }
     )
   }
-  showQuestion(){
-    this.setState(
-      {
-        checkAnswer:false,
-      }
-    )
-  }
+
   handelUserAnswered(answer){
     const { deck } = this.props;
     if(answer==='Correct'){
@@ -85,7 +85,7 @@ class CardQuiz extends Component {
               <View>
                   <Text style={styles.boldText}>{deck.questions[currentQuestionIndex].question}</Text>
                     <TouchableOpacity                   
-                    onPress={this.showAnswer.bind(this)}
+                    onPress={this.handelToggleAnswer.bind(this)}
                     > 
                     <Text style={styles.text}>Check Answer</Text>
                     </TouchableOpacity> 
@@ -94,7 +94,7 @@ class CardQuiz extends Component {
               (<View>
                 <Text style={styles.boldText}>{deck.questions[currentQuestionIndex].answer}</Text>
                   <TouchableOpacity                   
-                    onPress={this.showQuestion.bind(this)}
+                    onPress={this.handelToggleAnswer.bind(this)}
                     > 
                     <Text style={styles.text}>Check Question</Text>
                   </TouchableOpacity> 
