@@ -99,3 +99,7 @@ const DEFAULT_STATE = {
 
 
 ```
+
+<div  align="center">
+<img src="./components.png" width = "900" height = "750" alt="图片名称" align=center /></b>
+</div>
