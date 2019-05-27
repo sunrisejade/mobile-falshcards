@@ -7,7 +7,7 @@ The primary purpose of this project is to master the fundamental aspects of buil
 
 <div  align="center">
 Login
-<img src="./01.JPG" width = "900" height = "550" alt="图片名称" align=center /></b>
+<img src="./01.JPG" width = "900" height = "750" alt="图片名称" align=center /></b>
 </div>
 
 
