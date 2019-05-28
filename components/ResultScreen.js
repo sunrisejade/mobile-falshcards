@@ -1,5 +1,8 @@
 import React from 'react';
-import {StyleSheet,Text,View,TouchableOpacity} from 'react-native';
+import {StyleSheet,
+          Text,
+          View,
+          TouchableOpacity} from 'react-native';
 
 import {white,green,grey} from '../utils/colors';
 
@@ -10,14 +13,21 @@ export default function ResultScreen (props){
       <Text style={[styles.resultCardsText,{fontWeight:"bold"}]}>Total questions answered: {props.totalAnswered}</Text>
       <Text style={[styles.resultCardsText,{color:grey}]}>Your Score: {props.correct}</Text>
     </View>
-    <TouchableOpacity 
-      onPress={()=>{
-        props.restartQuiz();
-        props.navigation.goBack()}}
-      style={styles.iosRestartBtn}>
-      <Text style={styles.BtnText}>Restart</Text>
-    </TouchableOpacity> 
-  
+    <View>
+      <TouchableOpacity 
+        onPress={()=>{
+          props.restartQuiz();
+          props.navigation.goBack()}}
+        style={styles.iosRestartBtn}>
+        <Text style={styles.BtnText}>Restart</Text>
+      </TouchableOpacity> 
+      <TouchableOpacity 
+        onPress={()=>{
+          props.navigation.goBack()}}
+        style={styles.iosGoBackBtn}>
+        <Text style={styles.BtnText}>Go Back</Text>
+      </TouchableOpacity> 
+    </View>
   </View>
   )  
 }
@@ -46,6 +56,16 @@ const styles= StyleSheet.create({
   },
   iosRestartBtn:{
     backgroundColor: 	green,
+    padding: 10,
+    borderRadius: 7,
+    height: 40,
+    width:200,
+    marginTop:30,
+    marginLeft: 30,
+    marginRight: 30
+  },
+  iosGoBackBtn:{
+    backgroundColor: 	grey,
     padding: 10,
     borderRadius: 7,
     height: 40,

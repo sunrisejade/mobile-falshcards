@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View,Platform } from 'react-native'
 import { connect } from 'react-redux'
-import { recieveDecks } from '../actions'
+import { receiveDecks } from '../actions'
 import { deleteDeck, getDecks } from '../utils/api'
-import {purple,green} from '../utils/colors';
+import {purple,green, white} from '../utils/colors';
 
 class Deck extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -19,7 +19,7 @@ class Deck extends Component {
     deleteDeck(deck.title).then(() =>
       // Update redux store.
       getDecks().then(
-        (decks) => dispatch(recieveDecks(decks))
+        (decks) => dispatch(receiveDecks(decks))
       )
     )
     
@@ -29,6 +29,7 @@ class Deck extends Component {
     )  
   }
   
+  
   render() {
     const { deck } = this.props
      // here should add a condition if this deck exist then render it otherwise when u delete this deck ,it will throw error that deck.title undefined
@@ -36,7 +37,7 @@ class Deck extends Component {
       <View style={styles.container}>
         { deck && (
           <View style={{ flex: 1,justifyContent :"space-around"}}>
-            <View sytle={styles.box}>      
+            <View style={styles.box}>      
               <Text style={styles.cardName}>{deck.title}</Text>
               <Text style={styles.cardNum}>{deck.questions.length} cards</Text>
             </View>
@@ -58,7 +59,6 @@ class Deck extends Component {
             <Text style={styles.BtnText}>Start Quiz</Text>
           </TouchableOpacity>
           <TouchableOpacity 
-            style={styles.button}
             onPress={this.handleDeleteDeck}>
             <Text style={styles.deleteBtn}>Delete Deck</Text>
           </TouchableOpacity>
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     padding:20,
   },
   box: {
+    backgroundColor:white,
     height: 50,
     width: 200,
     borderRadius: 7,

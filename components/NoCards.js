@@ -1,5 +1,7 @@
-import React,{Component} from 'react';
-import {StyleSheet,Text,View,TouchableOpacity, Platform,Alert} from 'react-native';
+import React from 'react';
+import {StyleSheet,
+          Text,
+          View} from 'react-native';
 
 
 export default function NoCards (){

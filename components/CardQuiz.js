@@ -1,5 +1,9 @@
-import React, { Component } from 'react'
-import { StyleSheet, Text, TouchableOpacity, View,Platform } from 'react-native'
+import React, { Component } from 'react';
+import { StyleSheet, 
+          Text, 
+          TouchableOpacity, 
+          View,
+          Platform } from 'react-native';
 import { connect } from 'react-redux'
 import { clearLocalNotification, setLocalNotification } from '../utils/notification'
 import NoCards from './NoCards'
@@ -15,7 +19,6 @@ class CardQuiz extends Component {
     showScore:false,
     questionRemaining:this.props.deck.questions.length,
   }
-
   componentDidMount() {
     clearLocalNotification()
       .then(setLocalNotification)

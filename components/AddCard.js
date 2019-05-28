@@ -1,17 +1,24 @@
-import React, { Component } from 'react'
-import { StyleSheet, Text, TextInput, KeyboardAvoidingView, TouchableOpacity } from 'react-native'
-import { addCardToDeck } from '../utils/api'
-import { connect } from 'react-redux'
-import { addCard } from '../actions'
+import React, { Component } from 'react';
+import { StyleSheet, 
+    Text,
+    TextInput, 
+    KeyboardAvoidingView, 
+    TouchableOpacity } from 'react-native';
+import { addCardToDeck } from '../utils/api';
+import { connect } from 'react-redux';
+import { addCard } from '../actions';
 import {purple} from '../utils/colors';
 
 class AddCard extends Component {
   state = {
     question: '',
-    answer: ''
+    answer: '',
+    errorMessage:false
   }
     
   handleSubmit = () => {
+    if(this.state.question && this.state.answer){
+
     const { deck } = this.props.navigation.state.params
     // Save to redux store
     this.props.dispatch(addCard(
@@ -28,8 +35,12 @@ class AddCard extends Component {
     this.setState(() => ({
       question: '',
       answer: ''
-    }))    
+    })) 
+    this.setState({errorMessage:false})   
+  }else{
+    this.setState({errorMessage:true})
   }
+}
   
   handleQuestionTextChange = (textValue) => {
     this.setState(() => ({ question: textValue }))
@@ -57,12 +68,13 @@ class AddCard extends Component {
           value={answer}
           placeholder='Answer'
           onChangeText={this.handleAnswerTextChange}
-        />        
+        />  
         <TouchableOpacity 
           style={styles.button}
           onPress={this.handleSubmit} >
           <Text style={styles.buttonText}>Save Card</Text>
         </TouchableOpacity>
+        <Text style={styles.text}>{this.state.errorMessage===true? "You cannot create blank card" : ''} </Text>
       </KeyboardAvoidingView>
     )
   }
@@ -74,11 +86,13 @@ const styles = StyleSheet.create({
     padding: 12
   },
   title: {
+  
     margin: 12,
     fontSize: 16
   },
-  text: {
-    marginLeft: 12,
+  errorMessage: {
+    marginTop:5,
+    textAlign: 'center',
     fontSize: 14
   },
   button: {

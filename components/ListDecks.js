@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View, FlatList } from 'react-native'
 import { getDecks } from '../utils/api'
 import { connect } from 'react-redux'
-import { recieveDecks } from '../actions'
+import { receiveDecks } from '../actions'
 
 
 class ListDecks extends Component {
@@ -11,7 +11,7 @@ class ListDecks extends Component {
     const { dispatch } = this.props
     
     getDecks().then(
-      (decks) => dispatch(recieveDecks(decks))
+      (decks) => dispatch(receiveDecks(decks))
     )
   }
   
