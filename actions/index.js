@@ -1,10 +1,10 @@
 // ACTIONS
 
-export const RECIEVE_DECKS = 'RECIEVE_DECKS'
+export const RECEIVE_DECKS = 'RECEIVE_DECKS'
 
-export function recieveDecks (decks = {}) {
+export function receiveDecks (decks = {}) {
     return {
-        type: RECIEVE_DECKS,
+        type: RECEIVE_DECKS,
         decks
     }
 }
