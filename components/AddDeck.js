@@ -44,6 +44,9 @@ class AddDeck extends Component {
   }
 }
   
+handelTextChange = (textValue) => {
+  this.setState(() => ({ title: textValue }))
+}
   
     
   render() {
@@ -57,7 +60,7 @@ class AddDeck extends Component {
             <View style={styles.inputContainer}>
               <TextInput
                 value={title}
-                onChangeText={(text) => this.setState({title:text})}
+                onChangeText={this.handelTextChange}
                 style={styles.input}
                 placeholder={"Enter New Deck Name"}
               />
