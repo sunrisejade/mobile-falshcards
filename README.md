@@ -26,7 +26,7 @@ git clone https://github.com/moonfallmaple/mobile-falshcards.git
 Change into the *mobile-flashcards* project directory
 
 ```
-cd mobile-falshcards
+cd mobile-flashcards
 ```
 
 Install project dependencies
