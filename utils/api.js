@@ -30,19 +30,16 @@ const DEFAULT_STATE = {
 /**
  * Return all of the decks along with their titles, questions, and answers.
  */ 
-export function getDecks () {
-  return AsyncStorage.getItem(STORAGE_KEY).then((response) => { 
-    return JSON.parse(response) 
-  })
+export function getDecks() {
+  return AsyncStorage.getItem(STORAGE_KEY).then(result => {
+    if(result !== null) {
+      return JSON.parse(result) 
+    } else {
+      AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_STATE));
+      return DEFAULT_STATE;
+    }
+  });
 }
-
-/**
- * Take in a single id argument and return the deck associated with that id.
- */ 
-export function getDeck (id) {
-    
-}
-
 /**
  * Take in a single title argument and add it to the decks. 
  */
