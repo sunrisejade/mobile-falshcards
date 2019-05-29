@@ -74,7 +74,7 @@ class AddCard extends Component {
           onPress={this.handleSubmit} >
           <Text style={styles.buttonText}>Save Card</Text>
         </TouchableOpacity>
-        <Text style={styles.text}>{this.state.errorMessage===true? "You cannot create blank card" : ''} </Text>
+        <Text style={styles.errorMessage}>{this.state.errorMessage===true? "You cannot create blank card" : ''} </Text>
       </KeyboardAvoidingView>
     )
   }
