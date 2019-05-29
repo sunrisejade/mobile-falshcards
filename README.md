@@ -4,6 +4,7 @@ mobile-flashcards is a mobile application (Android or iOS - or both) that allows
 
 The primary purpose of this project is to master the fundamental aspects of building a native application including handling infinite lists, routing, and user input. 
 
+[Here is Demo](https://snack.expo.io/@sunrisejade/mobile-flashcards)
 
 <div  align="center">
 <img src="./01.JPG" width = "900" height = "750" alt="图片名称" align=center /></b>
