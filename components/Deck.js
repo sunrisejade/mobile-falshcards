@@ -87,10 +87,12 @@ const styles = StyleSheet.create({
   },
   box: {
     backgroundColor:white,
+    justifyContent: "center",
+    alignItems: 'center',
     height: 100,
     width: 200,
     borderRadius: 7,
-    margin: 10,
+    marginLeft: 30,
   },
   cardName:{
     textAlign:"center",
